@@ -27,6 +27,9 @@
           <h1 class="fs-1">
             Pengumuman Kelulusan Kelas IX SMP Negeri 2 Sidoharjo
           </h1>
+          <h1 class="fs-1">
+            Tahun Pelajaran 2022/2023
+          </h1>
         </div>
       </div>
 
@@ -37,7 +40,7 @@
       <!-- input pengumuman -->
       <div id="datainput" class="d-flex align-items-center flex-column m-2 mb-4 hidden">
         <label for="Induk" class="form-label text-center mb-2 text-light fs-5"
-          >Masukkan NIS mu disini 1</label
+          >Masukkan NIS mu disini !</label
         >
         <input
           type="text"
@@ -72,7 +75,18 @@
 
           xhr.onloadend = function(){
           var data = JSON.parse(this.responseText);
-          console.log(data.nama)
+          if (!data) {
+               
+          cardSKL.innerHTML =
+            `<div class="d-flex justify-content-center">
+            <p
+                  class="text-uppercase text-decoration-underline font-bold fs-5 text-light"
+                >
+                  Data Tidak Ada
+                </p>
+            </div`
+          } else {
+            
           cardSKL.innerHTML =
             `<div class="d-flex justify-content-center">
           <div class="card card-nis">
@@ -83,7 +97,7 @@
                 >
                   Surat Keterangan Lulus
                 </p>
-                <p>Nomor : 224.6 / ... / 04.11.28 / 2023</p>
+                <p>Nomor : 224.6 / 06.a / 04.11.28 / 2023</p>
               </div>
               <p class="fs-6">
                 Yang bertandatangan di bawah ini Kepala SMP Negeri 2 Sidoharjo
@@ -132,17 +146,22 @@
               </div>
               <p
                 class="text-uppercase text-black text-center font-bold fs-5 text-decoration-underline"
-              >
-                Lulus
-              </p>
+              >`
+                +data.lulus+
+              `</p>
               <p class="fs-6">
                 dari Sekolah Menengah Pertama yang diumumkan pada tanggal 8 Juni
                 2023, setelah memenuhi seluruh kriteria sesuai peraturan
                 perundang-undangan.
               </p>
             </div>
+            <div class='d-flex justify-content-end'>
+            <img src="<?php echo base_url('asset') ?>/img/ttd.png" alt='ttd' class="image-ttd" />
+            <div class="nocopy" />
+            </div>
           </div>
         </div> `;
+          }
           }
 
           xhr.open("GET", url)
@@ -169,7 +188,7 @@
       
 // countdown
       // Set the date we're counting down to
-      var countDownDate = new Date("may 29, 2023 09:58:30").getTime();
+      var countDownDate = new Date("jun 08, 2023 06:00:00").getTime();
 
       // Update the count down every 1 second
       var x = setInterval(function () {
