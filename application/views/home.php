@@ -78,12 +78,15 @@
           <div class="card card-nis">
             <div class="card-body">
               <div class="text-center font-">
+              <div>
+              <img src="./asset/img/kopsurat.PNG" alt="Logo_SMPN_2_Sidoharjo" class="logo mb-2 w-100" />
+              </div>
                 <p
                   class="text-uppercase text-decoration-underline font-bold fs-5"
                 >
                   Surat Kelulusan
                 </p>
-                <p>Nomor : 400.3.11.1/172c/04.11.28/2024</p>
+                <p class="fs-6">Nomor : 400.3.11.1/172c/04.11.28/2024</p>
               </div>
               <p class="fs-6">
                 Berdasarkan surat keputusan Kepala SMP Negeri 2 Sidoharjo nomor 400.3.11.1/172b/04.11.28/2024 bahwa Peserta Didik :
@@ -132,7 +135,7 @@
               </p>
             </div>
             <div class='d-flex justify-content-end'>
-            <img src="<?php echo base_url('asset') ?>/img/ttd2.png" alt='ttd' class="image-ttd" />
+            <img src="<?php echo base_url('asset') ?>/img/ttd2.png" alt='ttd' class="image-ttd w-50" />
             <div class="nocopy" />
             </div>
           </div>
